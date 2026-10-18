@@ -403,10 +403,6 @@
         font-weight: 700;
       }
 
-      .staff-section {
-        margin-top: 3.5rem;
-      }
-
       .practice-section {
         margin-top: 3.5rem;
         scroll-margin-top: 1rem;
@@ -620,61 +616,6 @@
         color: var(--muted);
       }
 
-      details {
-        overflow: hidden;
-        border: 1px solid var(--line);
-        border-radius: 1rem;
-        background: var(--card);
-      }
-
-      summary {
-        display: flex;
-        min-height: 4.2rem;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        padding: 1rem 1.25rem;
-        color: var(--teal-dark);
-        cursor: pointer;
-        font-weight: 800;
-        list-style: none;
-      }
-
-      summary::-webkit-details-marker {
-        display: none;
-      }
-
-      summary::after {
-        content: "+";
-        font-size: 1.5rem;
-        line-height: 1;
-      }
-
-      details[open] summary::after {
-        content: "−";
-      }
-
-      .staff-content {
-        padding: 0 1.25rem 1.3rem;
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-      }
-
-      .staff-content h3 {
-        margin: 1.1rem 0 0.3rem;
-        color: var(--ink);
-        font-size: 1rem;
-      }
-
-      .staff-content p,
-      .staff-content ul {
-        margin: 0.35rem 0 0;
-      }
-
-      .staff-content ul {
-        padding-left: 1.2rem;
-      }
-
       .school-links {
         margin-top: 3.5rem;
         padding: clamp(1.5rem, 5vw, 2.3rem);
@@ -778,7 +719,6 @@
         }
 
         .practice-section,
-        .staff-section,
         .school-links {
           margin-top: 2.5rem;
         }
@@ -920,29 +860,6 @@
               <button class="button practice-start" id="practice-restart" type="button">Nochmal spielen <span aria-hidden="true">↻</span></button>
             </div>
           </div>
-        </section>
-
-        <section class="staff-section" aria-labelledby="staff-title">
-          <details>
-            <summary id="staff-title">Du betreust einen Quizstand? Hier sind die Infos fürs Standteam.</summary>
-            <div class="staff-content">
-              <h3>Am Stand</h3>
-              <ul>
-                <li>Frag zuerst, ob die Mitspielerin oder der Mitspieler schon ein Quizzeugnis hat. Falls nicht, bitte zuerst eines holen.</li>
-                <li>Die Person zieht eine Frage aus einem der beiden Töpfe: Topf 1 für leichtere Fragen (10 Punkte), Topf 2 für schwierigere Fragen (20 Punkte).</li>
-                <li>Prüf die Antwort mithilfe der Lösung bei der jeweiligen Frage. Bei einer richtigen Antwort gibt es die vorgesehene Punktzahl, bei einer falschen Antwort keine Punkte.</li>
-                <li>Trag die Punkte gut lesbar und direkt nach der Antwort im passenden Fach ein.</li>
-              </ul>
-              <h3>Wichtige Regeln</h3>
-              <ul>
-                <li>Für jede gezogene Frage kann die entsprechende Punktzahl nur einmal vergeben werden. Es zählen nur richtige Antworten.</li>
-                <li>Achte darauf, dass die Punkte dem richtigen Fach zugeordnet sind. Verrate die Lösung nicht vor der Beantwortung.</li>
-                <li>Nach dem Eintragen können die Mitspielenden weitere Quizstände besuchen.</li>
-              </ul>
-              <h3>Spielabschluss</h3>
-              <p>Für die Verlosung müssen die Mitspielenden die vorgegebene Mindestpunktzahl erreichen und ihr vollständig ausgefülltes Zeugnis vorzeigen. Am Stand selbst werden keine Lose ausgegeben – erinnere die Gäste daran, ihr Zeugnis zum Abschluss vorzuzeigen.</p>
-            </div>
-          </details>
         </section>
 
         <section class="school-links" aria-labelledby="links-title">
