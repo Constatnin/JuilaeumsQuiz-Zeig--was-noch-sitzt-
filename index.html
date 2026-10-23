@@ -838,7 +838,7 @@
               <div>
                 <p class="practice-kicker">Dein kleiner Probelauf</p>
                 <h2 class="practice-title" id="practice-title">Lust auf eine Quizrunde?</h2>
-                <p class="practice-description">Teste dein Wissen mit neun Fragen aus BWL, Geschichte, Mathematik, Rechtskunde und VWL. Such dir eine Antwort aus – die Auflösung gibt's direkt danach.</p>
+                <p class="practice-description">Teste dein Wissen mit je einer Frage aus BWL, Geschichte, Mathematik, Rechtskunde und VWL. Such dir eine Antwort aus – die Auflösung gibt's direkt danach.</p>
                 <button class="button practice-start" id="practice-start" type="button">Übungsquiz starten <span aria-hidden="true">→</span></button>
               </div>
               <span class="practice-stamp" aria-hidden="true">✎</span>
@@ -846,10 +846,10 @@
 
             <div class="practice-game" id="practice-game" hidden>
               <div class="practice-progress">
-                <span id="question-counter">Frage 1 von 9</span>
+                <span id="question-counter">Frage 1 von 5</span>
                 <span id="score-counter">0 richtig</span>
               </div>
-              <div class="progress-track" id="progress-track" role="progressbar" aria-label="Fortschritt im Übungsquiz" aria-valuemin="0" aria-valuemax="9" aria-valuenow="0">
+              <div class="progress-track" id="progress-track" role="progressbar" aria-label="Fortschritt im Übungsquiz" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
                 <div class="progress-fill" id="progress-fill"></div>
               </div>
               <h3 class="practice-question" id="practice-question" tabindex="-1"></h3>
@@ -883,7 +883,7 @@
       </footer>
     </div>
     <script>
-      const practiceQuestions = [
+      const practiceQuestionBank = [
         {
           subject: "BWL",
           topic: "Diversifikation",
@@ -909,18 +909,6 @@
           correct: 0
         },
         {
-          subject: "Geschichte",
-          topic: "Industrialisierung und Imperialismus",
-          question: "Welcher Zusammenhang bestand zwischen Industrialisierung und Imperialismus?",
-          answers: [
-            "Industriestaaten suchten neue Märkte und Rohstoffe",
-            "Imperialismus beendete die Industrialisierung",
-            "Beide Entwicklungen waren unabhängig",
-            "Imperialismus begann vor jeder Industrialisierung"
-          ],
-          correct: 0
-        },
-        {
           subject: "Mathematik",
           topic: "Wahrscheinlichkeit",
           question: "Wie groß ist die Wahrscheinlichkeit für genau einen Kopf beim Werfen von zwei Münzen?",
@@ -932,18 +920,6 @@
           ],
           correct: 2,
           explanation: "Es gibt vier gleich wahrscheinliche Ergebnisse. Bei zwei davon fällt genau einmal Kopf. Die Wahrscheinlichkeit beträgt daher 2/4 = 1/2 = 50 %."
-        },
-        {
-          subject: "Rechtskunde",
-          topic: "Eigentum",
-          question: "Was versteht man im Sachenrecht unter Eigentum?",
-          answers: [
-            "Die tatsächliche Herrschaft über eine Sache",
-            "Das Recht, eine Sache für kurze Zeit zu nutzen",
-            "Das umfassende Recht, über eine Sache zu verfügen",
-            "Die Pflicht, eine Sache zu verwahren"
-          ],
-          correct: 2
         },
         {
           subject: "Rechtskunde",
@@ -993,8 +969,295 @@
           ],
           correct: 2,
           explanation: "Bei einer Inflation steigen die Preise allgemein und dauerhaft. Dadurch sinkt die Kaufkraft des Geldes."
+        },
+        {
+          subject: "BWL",
+          topic: "Geschäftsfälle",
+          question: "Welcher Geschäftsfall führt ausschließlich zu einer Aktiv-Passiv-Mehrung?",
+          answers: [
+            "Kauf einer Maschine gegen Barzahlung",
+            "Aufnahme eines Bankdarlehens auf das Girokonto",
+            "Bezahlung einer Lieferantenrechnung per Bank",
+            "Verkauf von Waren auf Ziel"
+          ],
+          correct: 1,
+          explanation: "Das Bankguthaben (Aktivseite) und gleichzeitig die Darlehensschuld (Passivseite) steigen."
+        },
+        {
+          subject: "BWL",
+          topic: "Gewinn und Liquidität",
+          question: "Welcher Zusammenhang zwischen Gewinn und Liquidität ist betriebswirtschaftlich korrekt?",
+          answers: [
+            "Hoher Gewinn bedeutet immer hohe Liquidität.",
+            "Hohe Liquidität bedeutet immer hohen Gewinn.",
+            "Gewinn und Liquidität sind unterschiedliche Größen.",
+            "Gewinn und Liquidität sind identisch."
+          ],
+          correct: 2,
+          explanation: "Ein Unternehmen kann Gewinn machen und trotzdem Zahlungsprobleme haben, wenn Kunden noch nicht bezahlt haben."
+        },
+        {
+          subject: "BWL",
+          topic: "Eigenkapital",
+          question: "Ein Unternehmen hat Vermögenswerte von 900.000 € und Fremdkapital von 500.000 €. Wie hoch ist das Eigenkapital?",
+          answers: ["300.000 €", "400.000 €", "500.000 €", "1.400.000 €"],
+          correct: 1,
+          explanation: "Eigenkapital = Vermögen − Fremdkapital = 900.000 € − 500.000 € = 400.000 €."
+        },
+        {
+          subject: "BWL",
+          topic: "Marketing-Mix",
+          question: "Welcher Bestandteil gehört normalerweise nicht zum Marketing-Mix nach den klassischen 4P?",
+          answers: ["Product", "Price", "Personnel", "Promotion"],
+          correct: 2,
+          explanation: "Die klassischen 4P sind Product, Price, Place und Promotion."
+        },
+        {
+          subject: "BWL",
+          topic: "Deckungsbeitrag",
+          question: "Ein Produkt erzielt einen Verkaufspreis von 120 €, die variablen Stückkosten betragen 75 €. Wie hoch ist der Deckungsbeitrag pro Stück?",
+          answers: ["35 €", "40 €", "45 €", "50 €"],
+          correct: 2,
+          explanation: "Deckungsbeitrag = Verkaufspreis − variable Kosten = 120 € − 75 € = 45 €."
+        },
+        {
+          subject: "Mathematik",
+          topic: "Scheitelpunkt",
+          question: "Die Funktion f(x) = x² − 6x + 5 besitzt ihr Minimum bei welchem x-Wert?",
+          answers: ["x = 2", "x = 3", "x = 4", "x = 5"],
+          correct: 1,
+          explanation: "Der Scheitelpunkt liegt bei x = −b/(2a) = 6/2 = 3."
+        },
+        {
+          subject: "Mathematik",
+          topic: "Wahrscheinlichkeit",
+          question: "Wie groß ist die Wahrscheinlichkeit, bei zwei Würfeln eine Augensumme von 7 zu erhalten?",
+          answers: ["1/12", "1/9", "1/6", "1/4"],
+          correct: 2,
+          explanation: "Es gibt sechs günstige Ergebnisse von insgesamt 36 Möglichkeiten: 6/36 = 1/6."
+        },
+        {
+          subject: "Mathematik",
+          topic: "Potenzen",
+          question: "Für welches x gilt 3ˣ = 81?",
+          answers: ["2", "3", "4", "5"],
+          correct: 2,
+          explanation: "3⁴ = 81."
+        },
+        {
+          subject: "Mathematik",
+          topic: "Kombinatorik",
+          question: "Wie viele Möglichkeiten gibt es, 3 Personen aus 8 Personen auszuwählen?",
+          answers: ["24", "48", "56", "64"],
+          correct: 2,
+          explanation: "Die Reihenfolge spielt keine Rolle: Der Binomialkoeffizient (8 über 3) ergibt 56."
+        },
+        {
+          subject: "Mathematik",
+          topic: "Wahrscheinlichkeit",
+          question: "Wie groß ist die Wahrscheinlichkeit, bei drei Münzwürfen mindestens einmal Kopf zu erhalten?",
+          answers: ["1/8", "3/8", "7/8", "1"],
+          correct: 2,
+          explanation: "Die Gegenwahrscheinlichkeit für kein Kopf beträgt 1/8. Daher ist die gesuchte Wahrscheinlichkeit 1 − 1/8 = 7/8."
+        },
+        {
+          subject: "Geschichte",
+          topic: "Erster Weltkrieg",
+          question: "Warum entwickelte sich das Attentat von Sarajevo 1914 zu einem europäischen Krieg?",
+          answers: [
+            "Weil alle Staaten dieselbe Regierung hatten",
+            "Weil die Großmächte durch Bündnisse miteinander verbunden waren",
+            "Weil der Versailler Vertrag sofort in Kraft trat",
+            "Weil die USA Europa angriffen"
+          ],
+          correct: 1,
+          explanation: "Die Bündnissysteme führten dazu, dass immer mehr Staaten in den Konflikt hineingezogen wurden."
+        },
+        {
+          subject: "Geschichte",
+          topic: "Soziale Frage",
+          question: "Welche Folge der Industrialisierung führte zur sogenannten sozialen Frage?",
+          answers: [
+            "Die Ausbreitung des Feudalismus",
+            "Die Vergrößerung des Adels",
+            "Die oft schlechten Lebens- und Arbeitsbedingungen der Arbeiter",
+            "Die Abschaffung aller Fabriken"
+          ],
+          correct: 2,
+          explanation: "Viele Arbeiter lebten unter schwierigen Bedingungen, was soziale Spannungen auslöste."
+        },
+        {
+          subject: "Geschichte",
+          topic: "Französische Revolution",
+          question: "Warum wird die Französische Revolution als Wendepunkt der Geschichte betrachtet?",
+          answers: [
+            "Weil sie die Leibeigenschaft in ganz Europa sofort beendete",
+            "Weil sie die Idee stärkte, dass politische Macht vom Volk ausgehen kann",
+            "Weil sie die Industrialisierung erfand",
+            "Weil sie den Ersten Weltkrieg auslöste"
+          ],
+          correct: 1,
+          explanation: "Die Revolution stellte das Prinzip der Volkssouveränität in den Mittelpunkt."
+        },
+        {
+          subject: "Geschichte",
+          topic: "Industrialisierung und Imperialismus",
+          question: "Welcher Zusammenhang bestand zwischen Industrialisierung und Imperialismus im 19. Jahrhundert?",
+          answers: [
+            "Industriestaaten suchten Rohstoffe und neue Absatzmärkte",
+            "Die Industrialisierung beendete den Imperialismus",
+            "Imperialismus verhinderte wirtschaftliches Wachstum",
+            "Beide Entwicklungen hatten keinen Zusammenhang"
+          ],
+          correct: 0,
+          explanation: "Die Industrie benötigte Rohstoffe und neue Märkte für ihre Produkte."
+        },
+        {
+          subject: "Geschichte",
+          topic: "Südtiroler Option",
+          question: "Warum war die Südtiroler Option von 1939 für viele Familien eine schwere Entscheidung?",
+          answers: [
+            "Weil sie zwischen Demokratie und Monarchie wählen mussten",
+            "Weil sie zwischen Italien und Frankreich wählen mussten",
+            "Weil sie sich zwischen Auswanderung und Verbleib in Italien entscheiden mussten",
+            "Weil sie ihre Sprache frei wählen mussten"
+          ],
+          correct: 2,
+          explanation: "Die Betroffenen mussten entscheiden, ob sie ihre Heimat verlassen oder unter den damaligen Bedingungen in Italien bleiben wollten."
+        },
+        {
+          subject: "Rechtskunde",
+          topic: "Besitz und Eigentum",
+          question: "In welchem Fall fallen Besitz und Eigentum auseinander?",
+          answers: [
+            "Maria kauft ein Fahrrad und nimmt es sofort mit nach Hause.",
+            "Paul leiht sich das Fahrrad seines Freundes für eine Woche aus.",
+            "Anna erbt ein Haus und zieht sofort ein.",
+            "Luca verkauft sein Auto und übergibt es dem Käufer."
+          ],
+          correct: 1,
+          explanation: "Paul hat das Fahrrad tatsächlich in seiner Verfügungsgewalt (Besitz); Eigentümer bleibt sein Freund."
+        },
+        {
+          subject: "Rechtskunde",
+          topic: "Europäische Union",
+          question: "Welches Organ der Europäischen Union wird direkt von den Bürgerinnen und Bürgern der Mitgliedstaaten gewählt?",
+          answers: [
+            "Europäische Kommission",
+            "Rat der Europäischen Union",
+            "Europäisches Parlament",
+            "Europäischer Rat"
+          ],
+          correct: 2,
+          explanation: "Das Europäische Parlament ist das einzige EU-Organ, das direkt gewählt wird."
+        },
+        {
+          subject: "Rechtskunde",
+          topic: "Arbeitsrecht",
+          question: "Ein Arbeitnehmer erfüllt seine Arbeitspflicht ordnungsgemäß, erhält aber keinen Lohn. Welche Pflicht verletzt der Arbeitgeber?",
+          answers: [
+            "Die Fürsorgepflicht",
+            "Die Kontrollpflicht",
+            "Die Ausbildungspflicht",
+            "Die Entgeltzahlungspflicht"
+          ],
+          correct: 3,
+          explanation: "Die Hauptpflicht des Arbeitgebers besteht in der Zahlung des vereinbarten Entgelts."
+        },
+        {
+          subject: "Rechtskunde",
+          topic: "Gesellschaftsrecht",
+          question: "Welches Merkmal unterscheidet eine Kapitalgesellschaft typischerweise von einer Personengesellschaft?",
+          answers: [
+            "Sie darf nur im Handel tätig sein.",
+            "Die persönliche Mitarbeit der Gesellschafter ist zwingend erforderlich.",
+            "Das eingebrachte Kapital steht stärker im Vordergrund als die Person der Gesellschafter.",
+            "Sie benötigt kein Gesellschaftsvermögen."
+          ],
+          correct: 2,
+          explanation: "Bei Kapitalgesellschaften ist das Kapital entscheidend, bei Personengesellschaften die beteiligten Personen."
+        },
+        {
+          subject: "Rechtskunde",
+          topic: "Verwaltungsrecht",
+          question: "Was kann ein Bürger grundsätzlich gegen einen rechtswidrigen Verwaltungsakt einer Behörde tun?",
+          answers: [
+            "Ein Rechtsmittel einlegen.",
+            "Automatisch Schadenersatz verlangen.",
+            "Die Behörde auflösen.",
+            "Den Verwaltungsakt selbst für ungültig erklären."
+          ],
+          correct: 0,
+          explanation: "Das Verwaltungsrecht sieht Rechtsmittel vor, um Entscheidungen von Behörden überprüfen zu lassen."
+        },
+        {
+          subject: "VWL",
+          topic: "Geldpolitik",
+          question: "Welche Maßnahme kann die Europäische Zentralbank zur Bekämpfung hoher Inflation ergreifen?",
+          answers: [
+            "Leitzinsen erhöhen",
+            "Mehrwertsteuer senken",
+            "Staatsausgaben erhöhen",
+            "Exportzölle abschaffen"
+          ],
+          correct: 0,
+          explanation: "Höhere Leitzinsen verteuern Kredite und können die Nachfrage sowie den Preisdruck senken."
+        },
+        {
+          subject: "VWL",
+          topic: "Deflation",
+          question: "Warum kann anhaltende Deflation problematisch sein?",
+          answers: [
+            "Konsumenten verschieben Käufe in die Zukunft",
+            "Unternehmen erzielen automatisch höhere Gewinne",
+            "Exporte steigen immer stark an",
+            "Die Geldmenge nimmt zwangsläufig zu"
+          ],
+          correct: 0,
+          explanation: "Wenn Preise weiter sinken könnten, warten Haushalte mit Käufen, wodurch die Wirtschaft gebremst werden kann."
+        },
+        {
+          subject: "VWL",
+          topic: "Unternehmenskonzentration",
+          question: "Was ist eine mögliche Folge von Unternehmenskonzentration?",
+          answers: [
+            "Größere Marktmacht einzelner Unternehmen",
+            "Vollständiger Wegfall aller Gewinne",
+            "Sinkende Produktivität aller Betriebe",
+            "Automatische Senkung aller Preise"
+          ],
+          correct: 0,
+          explanation: "Weniger, aber größere Unternehmen können mehr Einfluss auf den Markt ausüben."
+        },
+        {
+          subject: "VWL",
+          topic: "Zinsen",
+          question: "Welche Wirkung hat eine Zinserhöhung häufig?",
+          answers: [
+            "Kredite werden weniger attraktiv",
+            "Die Nachfrage steigt automatisch",
+            "Die Inflation erhöht sich sicher",
+            "Exporte werden verboten"
+          ],
+          correct: 0,
+          explanation: "Höhere Zinsen verteuern die Kreditaufnahme für Haushalte und Unternehmen."
+        },
+        {
+          subject: "VWL",
+          topic: "Angebot und Nachfrage",
+          question: "Welcher Zusammenhang besteht zwischen Angebot und Nachfrage?",
+          answers: [
+            "Beide beeinflussen gemeinsam die Preisbildung",
+            "Beide betreffen ausschließlich Unternehmen",
+            "Beide werden nur vom Staat festgelegt",
+            "Beide haben keinen Einfluss auf Preise"
+          ],
+          correct: 0,
+          explanation: "Das Zusammenspiel von Angebot und Nachfrage bestimmt den Marktpreis und die gehandelte Menge."
         }
       ];
+      const practiceSubjects = ["BWL", "Geschichte", "Mathematik", "Rechtskunde", "VWL"];
+      let practiceQuestions = [];
 
       const startButton = document.querySelector("#practice-start");
       const game = document.querySelector("#practice-game");
@@ -1080,6 +1343,20 @@
       }
 
       function startQuiz() {
+        practiceQuestions = practiceSubjects.map((subject) => {
+          const subjectQuestions = practiceQuestionBank.filter((item) => item.subject === subject);
+          const randomIndex = Math.floor(Math.random() * subjectQuestions.length);
+          return subjectQuestions[randomIndex];
+        });
+
+        for (let index = practiceQuestions.length - 1; index > 0; index -= 1) {
+          const randomIndex = Math.floor(Math.random() * (index + 1));
+          [practiceQuestions[index], practiceQuestions[randomIndex]] = [
+            practiceQuestions[randomIndex],
+            practiceQuestions[index]
+          ];
+        }
+
         currentQuestion = 0;
         correctAnswers = 0;
         startButton.hidden = true;
@@ -1101,7 +1378,7 @@
         resultTitle.textContent = `${correctAnswers} von ${total} richtig!`;
         resultCopy.textContent = correctAnswers === total
           ? "Perfekt – dein Schulwissen sitzt! Lust auf eine weitere Runde?"
-          : correctAnswers >= 6
+          : correctAnswers >= 4
             ? "Starkes Ergebnis! Eine weitere Runde bringt die letzten Punkte vielleicht auch noch."
             : "Gute Übung! Probier es gleich noch einmal und schau, wie viele du diesmal weißt.";
         restartButton.focus();
